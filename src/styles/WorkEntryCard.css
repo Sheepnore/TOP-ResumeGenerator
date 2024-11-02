@@ -1,0 +1,17 @@
+.workEntry{
+  margin-top: 1rem;
+}
+
+.workEntry .company-info .company-name{
+  font-weight: bold;
+}
+
+.workEntry .job-description{
+  margin-top: 1rem;
+}
+
+.workEntry .job-position-info{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1rem;
+}

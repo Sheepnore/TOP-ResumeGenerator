@@ -1,0 +1,27 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  max-width: 100%;
+  min-height: auto;
+  background-color: #fff;
+}
+
+.cv{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.inputSection{
+  grid-area: 1/1/2/2;
+}
+
+.template{
+  grid-area: 1/2/2/3;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.2rem;
+  background-color: aliceblue;
+  padding: 2rem;
+}

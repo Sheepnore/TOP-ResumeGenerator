@@ -1,0 +1,52 @@
+.user-input{
+  margin: 1rem;
+  padding: .5rem 1rem;
+  border-radius: 12px;
+  background-color: antiquewhite;
+}
+
+.user-input .toggle-bar{
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+}
+.user-input .toggleBtn{
+  border: none;
+  background: transparent;
+}
+.user-input .toggleBtn svg{
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+
+.user-input .toggleBtn svg.rotate{
+  transform: rotate(.5turn);
+}
+
+/* NOTE: transition only works with display:block or flex, so setting it to display:none won't trigger the transition */
+
+.user-input .input {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: .5rem 0;
+  background-color: #fff;
+  border-radius: 12px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 700ms ease;
+}
+
+.user-input .input.active{
+  max-height: 20rem;
+  opacity: 1;
+}
+
+.user-input .input > *{
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
