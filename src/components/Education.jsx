@@ -86,7 +86,7 @@ export default function Education({ education, setEducation }) {
           />
         </div>
 
-        <div className="createEducation">
+        <div className="buttons">
           <button
             className="createEducation button"
             onClick={() => {

@@ -1,8 +1,9 @@
 .user-input{
-  margin: 1rem;
+  margin: 1.5rem 1rem 1rem 1rem;
   padding: .5rem 1rem;
   border-radius: 12px;
   background-color: antiquewhite;
+  filter: drop-shadow(3px 3px 5px rgba(147, 147, 147, 0.757));
 }
 
 .user-input .toggle-bar{

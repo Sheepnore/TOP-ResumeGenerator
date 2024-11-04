@@ -17,6 +17,7 @@
   border: none;
   cursor: pointer;
   transition: all 300ms ease;
+  filter: drop-shadow(2px 2px 2px rgba(147, 147, 147, 0.757));
 }
 
 .user-input .createWorkHistory .button:hover{

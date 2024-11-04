@@ -27,7 +27,7 @@ export const educational = [
   {
     entryId: crypto.randomUUID(),
     degree: "Bachelor of Technology in Computer Science",
-    graduateYear: "07/2024",
+    graduateYear: "2024",
     university: "National Taiwan university",
     location: "Taipei, Taiwan",
   },

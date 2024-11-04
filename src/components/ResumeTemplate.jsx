@@ -33,7 +33,7 @@ export default function ResumeTemplate({ person, education, work }) {
           <EducationEntryCard
             key={entry.entryId}
             degree={entry.degree}
-            graduated={entry.graduated}
+            graduateYear={entry.graduateYear}
             university={entry.university}
             location={entry.location}
           ></EducationEntryCard>
