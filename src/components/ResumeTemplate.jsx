@@ -1,6 +1,6 @@
 import "../styles/ResumeTemplate.css";
 import EducationEntryCard from "./EducationEntryCard";
-import WorkEntryCard from "@/components/WorkEntryCard";
+import WorkEntryCard from "./WorkEntryCard.jsx";
 export default function ResumeTemplate({ person, education, work }) {
   console.log(education);
   return (
