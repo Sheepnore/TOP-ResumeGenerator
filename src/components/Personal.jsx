@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "../styles/userInput.css";
-
+import "../styles/Personal.css";
 export default function Personal({ person, setPerson }) {
-  const [visible, setVisible] = useState(false);
-
+  const [visible, setVisible] = useState(true);
+  const [inputDisabled, setInputDisabled] = useState(false);
   return (
     <div className="user-input">
       <div
@@ -39,6 +39,7 @@ export default function Personal({ person, setPerson }) {
             onChange={(e) => {
               setPerson({ ...person, name: e.target.value });
             }}
+            disabled={inputDisabled}
           />
         </div>
 
@@ -49,6 +50,7 @@ export default function Personal({ person, setPerson }) {
             onChange={(e) => {
               setPerson({ ...person, email: e.target.value });
             }}
+            disabled={inputDisabled}
           />
         </div>
 
@@ -59,6 +61,7 @@ export default function Personal({ person, setPerson }) {
             onChange={(e) => {
               setPerson({ ...person, phone: e.target.value });
             }}
+            disabled={inputDisabled}
           />
         </div>
 
@@ -69,7 +72,24 @@ export default function Personal({ person, setPerson }) {
             onChange={(e) => {
               setPerson({ ...person, location: e.target.value });
             }}
+            disabled={inputDisabled}
           />
+        </div>
+        <div className="buttons input-container">
+          <button
+            onClick={() => {
+              setInputDisabled(false);
+            }}
+          >
+            Edit
+          </button>
+          <button
+            onClick={() => {
+              setInputDisabled(true);
+            }}
+          >
+            Save
+          </button>
         </div>
       </div>
     </div>

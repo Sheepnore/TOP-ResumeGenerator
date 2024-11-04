@@ -15,7 +15,10 @@ function App() {
       <div className="inputSection">
         <Personal person={person} setPerson={setPerson}></Personal>
         <WorkHistory work={work} setWork={setWork}></WorkHistory>
-        <Education></Education>
+        <Education
+          education={education}
+          setEducation={setEducation}
+        ></Education>
       </div>
       <div className="template">
         <ResumeTemplate
