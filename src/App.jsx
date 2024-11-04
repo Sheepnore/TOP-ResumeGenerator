@@ -10,13 +10,12 @@ function App() {
   const [person, setPerson] = useState(personal);
   const [work, setWork] = useState(workHistory);
   const [education, setEducation] = useState(educational);
-
   return (
     <div className="cv">
       <div className="inputSection">
         <Personal person={person} setPerson={setPerson}></Personal>
+        <WorkHistory work={work} setWork={setWork}></WorkHistory>
         <Education></Education>
-        <WorkHistory></WorkHistory>
       </div>
       <div className="template">
         <ResumeTemplate

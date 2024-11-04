@@ -1,19 +1,29 @@
 import { useState } from "react";
+import "../styles/userInput.css";
 import "../styles/WorkHistory.css";
-
-export default function Personal({ work, setWork }) {
+export default function WorkHistory({ work, setWork }) {
   const [visible, setVisible] = useState(false);
+  const [data, setData] = useState({});
+  console.log(data);
+
+  function handleEmptyInput(test) {
+    if (Object.keys(test).length < 6) {
+      return true;
+    } else if (Object.keys(test).length === 6) {
+      return false;
+    }
+  }
 
   return (
     <div className="user-input">
-      <div className="toggle-bar">
+      <div
+        className="toggle-bar"
+        onClick={() => {
+          setVisible(!visible);
+        }}
+      >
         Work History
-        <button
-          className="toggleBtn"
-          onClick={() => {
-            setVisible(!visible);
-          }}
-        >
+        <button className="toggleBtn">
           <svg
             width="24px"
             height="24px"
@@ -31,45 +41,97 @@ export default function Personal({ work, setWork }) {
           </svg>
         </button>
       </div>
-      <div className={visible ? "active input" : "input"}>
-        <div className="name">
+      <div className={visible ? "active input-section" : "input-section"}>
+        <div className="input-container">
           <span>Company: </span>
           <input
             type="text"
             onChange={(e) => {
-              setPerson({ ...work, company: e.target.value });
+              setData({ ...data, company: e.target.value });
             }}
+            value={data.company || ""}
           />
         </div>
 
-        <div className="email">
+        <div className="input-container">
           <span>Job Title:</span>
           <input
-            type="email"
+            type="text"
             onChange={(e) => {
-              setPerson({ ...work, jobTitle: e.target.value });
+              setData({ ...data, jobTitle: e.target.value });
             }}
+            value={data.jobTitle || ""}
           />
         </div>
 
-        <div className="phone">
+        <div className="input-container">
           <span>Start Date:</span>
           <input
-            type="tel"
+            type="text"
             onChange={(e) => {
-              setPerson({ ...work, startDate: e.target.value });
+              setData({ ...data, startDate: e.target.value });
             }}
+            value={data.startDate || ""}
           />
         </div>
 
-        <div className="location">
+        <div className="input-container">
           <span>End Date:</span>
           <input
             type="text"
             onChange={(e) => {
-              setPerson({ ...work, endDate: e.target.value });
+              setData({ ...data, endDate: e.target.value });
             }}
+            value={data.endDate || ""}
           />
+        </div>
+
+        <div className="input-container">
+          <span>Location:</span>
+          <input
+            type="text"
+            onChange={(e) => {
+              setData({ ...data, location: e.target.value });
+            }}
+            value={data.location || ""}
+          />
+        </div>
+
+        <div id="JD-container" className="input-container">
+          <div>Job Description:</div>
+          <textarea
+            name="JD"
+            id="JD"
+            placeholder="Enter job description"
+            onChange={(e) => {
+              setData({ ...data, jobDescription: e.target.value });
+            }}
+            value={data.jobDescription || ""}
+          ></textarea>
+        </div>
+        <div className="createWorkHistory">
+          <button
+            className="createWorkHistoryBtn button"
+            onClick={() => {
+              const newEntry = { ...data, entryId: crypto.randomUUID() };
+              if (handleEmptyInput(data)) {
+                console.log("Make sure complete the info");
+              } else {
+                setWork([...work, newEntry]);
+                setData({});
+              }
+            }}
+          >
+            Create
+          </button>
+          <button
+            className="resetWorkHistoryBtn button"
+            onClick={() => {
+              setData({});
+            }}
+          >
+            Reset
+          </button>
         </div>
       </div>
     </div>

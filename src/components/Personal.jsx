@@ -6,14 +6,14 @@ export default function Personal({ person, setPerson }) {
 
   return (
     <div className="user-input">
-      <div className="toggle-bar">
+      <div
+        className="toggle-bar"
+        onClick={() => {
+          setVisible(!visible);
+        }}
+      >
         Person
-        <button
-          className="toggleBtn"
-          onClick={() => {
-            setVisible(!visible);
-          }}
-        >
+        <button className="toggleBtn">
           <svg
             width="24px"
             height="24px"
@@ -31,8 +31,8 @@ export default function Personal({ person, setPerson }) {
           </svg>
         </button>
       </div>
-      <div className={visible ? "active input" : "input"}>
-        <div className="name">
+      <div className={visible ? "active input-section" : "input-section"}>
+        <div className="name input-container">
           <span>Name: </span>
           <input
             type="text"
@@ -42,7 +42,7 @@ export default function Personal({ person, setPerson }) {
           />
         </div>
 
-        <div className="email">
+        <div className="email input-container">
           <span>Email:</span>
           <input
             type="email"
@@ -52,7 +52,7 @@ export default function Personal({ person, setPerson }) {
           />
         </div>
 
-        <div className="phone">
+        <div className="phone input-container">
           <span>Phone:</span>
           <input
             type="tel"
@@ -62,7 +62,7 @@ export default function Personal({ person, setPerson }) {
           />
         </div>
 
-        <div className="location">
+        <div className="location input-container">
           <span>Location:</span>
           <input
             type="text"

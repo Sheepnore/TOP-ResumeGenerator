@@ -2,7 +2,7 @@ import "../styles/ResumeTemplate.css";
 import EducationEntryCard from "./EducationEntryCard";
 import WorkEntryCard from "./workEntryCard";
 export default function ResumeTemplate({ person, education, work }) {
-  console.log(education);
+  console.log(work);
   return (
     <>
       <div className="user-personal">
