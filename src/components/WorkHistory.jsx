@@ -114,6 +114,7 @@ export default function WorkHistory({ work, setWork }) {
             className="createWorkHistoryBtn button"
             onClick={() => {
               const newEntry = { ...data, entryId: crypto.randomUUID() };
+              // X: setData({ ...data, entryId: crypto.randomUUID() }); The updated data will only exist after the next render
               if (handleEmptyInput(data)) {
                 console.log("Make sure complete the info");
               } else {
